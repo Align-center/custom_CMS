@@ -5,5 +5,6 @@ const express = require('express'),
 router.get('/', Role.getRoles);
 router.post('/', Role.createRole);
 router.put('/:id', Role.updateRole);
+router.delete('/:id', Role.deleteRole);
 
 module.exports = router;

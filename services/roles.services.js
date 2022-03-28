@@ -1,4 +1,3 @@
-const res = require('express/lib/response');
 const Role = require('../models/roles.models');
 
 exports.getRoles = async function () {
@@ -20,11 +19,5 @@ exports.updateRole = async function (name, id) {
 
 exports.deleteRole = async function (id) {
 
-    return await Role.findOneAndDelete({_id: id}, {_id: id}, (err) => {
-
-        if (err)
-            throw err;
-
-        return true;
-    });
+    return await Role.findOneAndDelete({_id: id});
 }

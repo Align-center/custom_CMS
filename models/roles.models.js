@@ -9,11 +9,9 @@ const RoleSchema = new Schema ({
         validate: {
             validator: function (role) {
 
-                console.log(role);
-
                 return /[a-z]/gi.test(role);
             },
-            message: 'NOOOOOON PAS COMME CA'
+            message: 'Le format du nom de role ne doit contenir que des lettres'
         }
     }
 });

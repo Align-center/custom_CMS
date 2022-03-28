@@ -20,3 +20,10 @@ exports.updateRole = async function(req, res) {
 
     res.status(200).send(role);
 }
+
+exports.deleteRole = async function (req, res) {
+
+    let role = await Role.deleteRole(req.params.id);
+
+    res.status(200).send(role);
+}
