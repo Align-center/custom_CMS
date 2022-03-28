@@ -1,0 +1,6 @@
+{
+    "secret": "FHMRV@C9m-F/4L2%1(F/58NfX_,>5zVRe#CXuSzY{+4d?>sVBlS%La'gF|htL#^",
+    "refreshSecret": "y1$z6{<F#PBE:B@bXklB^z*:<s(xoJyIr/]veq'vjLc@Xh+%%itnTs|d.bEPfaf",
+    "tokenExp": 900,
+    "refreshTokenExp": 86400
+}

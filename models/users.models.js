@@ -34,10 +34,10 @@ const userSchema = new Schema({
         ref: 'Role',
         required: true
     },
-    favoritePosts: {
+    favoritePosts: [{
         type: ObjectId,
         ref: 'Posts'
-    }
+    }]
 });
 
 userSchema.pre('save', function (next){

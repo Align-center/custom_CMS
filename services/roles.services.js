@@ -12,8 +12,6 @@ exports.createRole = async function (name) {
 
 exports.updateRole = async function (name, id) {
 
-    console.log(typeof name.name);
-
     return await Role.findOneAndUpdate({_id: id}, name, {new: true, runValidators: true});
 }
 
