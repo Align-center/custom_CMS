@@ -5,7 +5,16 @@ const RoleSchema = new Schema ({
     name: {
         type: String, 
         required: true,
-        unique: true
+        unique: true,
+        validate: {
+            validator: function (role) {
+
+                console.log(role);
+
+                return /[a-z]/gi.test(role);
+            },
+            message: 'NOOOOOON PAS COMME CA'
+        }
     }
 });
 

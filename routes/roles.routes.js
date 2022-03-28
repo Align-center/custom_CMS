@@ -3,5 +3,7 @@ const express = require('express'),
     Role = require('../controllers/roles.controllers.js');
 
 router.get('/', Role.getRoles);
+router.post('/', Role.createRole);
+router.put('/:id', Role.updateRole);
 
 module.exports = router;
