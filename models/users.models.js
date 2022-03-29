@@ -32,7 +32,8 @@ const userSchema = new Schema({
     role: {
         type: ObjectId,
         ref: 'Role',
-        required: true
+        required: true,
+        default: '6241631f6ea4ff64034e9523'
     },
     favoritePosts: [{
         type: ObjectId,
