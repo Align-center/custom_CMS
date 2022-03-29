@@ -2,12 +2,12 @@ const User = require('../models/users.models.js');
 
 exports.getUsers = async function () {
 
-    return await User.find();
+    return await User.find().populate('role');
 }
 
 exports.getUserById = async function (id) {
 
-    return await User.findById(id).exec();
+    return await User.findById(id).populate('role').exec();
 }
 
 exports.getUserByEmail = async function (email) {

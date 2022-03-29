@@ -19,16 +19,21 @@ const PostSchema = new Schema({
         type: ObjectId,
         ref: 'Categories',
         required: true,
-        validate: [function () {
+        validate: {
+            validator: function () {
+                
+                if (this.categories.length > 2) {
 
-            console.log(this);
+                    return false;
+                }
+            },
+            message: 'Un post peut avoir un maximum de 2 catégories' 
         },
-        'Un post ne peut pas avoir plus de 2 catégories']
     }],
     comments: [{
         type: ObjectId,
         ref: 'Comments'
-    }]
+    }] 
 });
 
 module.exports = mongoose.model('Posts', PostSchema);

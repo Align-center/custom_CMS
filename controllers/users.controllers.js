@@ -67,5 +67,7 @@ exports.deleteUser = async function (req, res) {
 
     let user = await User.deleteUser(req.params.id);
 
-    res.status(200).send(user);
+    res.status(200).send({
+        msg: 'Utilisateur supprimé'
+    });
 }

@@ -25,5 +25,7 @@ exports.deleteRole = async function (req, res) {
 
     let role = await Role.deleteRole(req.params.id);
 
-    res.status(200).send(role);
+    res.status(200).send({
+        msg: 'Role supprimé'
+    });
 }
