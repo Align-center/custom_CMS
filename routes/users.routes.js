@@ -7,7 +7,7 @@ router.get('/login', User.connectUser);
 router.post('/register', User.createUser);
 
 router.get('/', auth,  User.getUsers);
-router.get('/:id',auth, User.getUserById);
+router.get('/:id', auth, User.getUserById);
 router.post('/', auth, User.createUser);
 router.put('/:id', auth, User.updateUser);
 router.delete('/:id', auth, User.deleteUser);

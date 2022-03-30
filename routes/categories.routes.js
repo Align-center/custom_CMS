@@ -3,10 +3,10 @@ const express = require('express'),
     Category = require('../controllers/categories.controlers'),
     auth = require('../middlewares/auth');
 
-router.get('/', Category.getCategories);
-router.get('/:id', Category.getCategoryById);
-router.post('/', Category.createCategory);
-router.put('/:id', Category.updateCategory);
-router.delete('/:id', Category.deleteCategory);
+router.get('/', auth, Category.getCategories);
+router.get('/:id', auth, Category.getCategoryById);
+router.post('/', auth, Category.createCategory);
+router.put('/:id', auth, Category.updateCategory);
+router.delete('/:id', auth, Category.deleteCategory);
 
 module.exports = router;
