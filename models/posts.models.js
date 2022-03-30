@@ -15,21 +15,24 @@ const PostSchema = new Schema({
         ref: 'Users',
         required: true
     },
-    categories: [{
-        type: ObjectId,
-        ref: 'Categories',
+    categories: {
+        type:  [{
+            type: ObjectId,
+            ref: 'Categories',
+            required: true
+        }],
         required: true,
         validate: {
-            validator: function () {
-                
-                if (this.categories.length > 2) {
+            validator: function (array) {
+
+                if (array.length > 2) {
 
                     return false;
                 }
             },
             message: 'Un post peut avoir un maximum de 2 catégories' 
-        },
-    }],
+        }
+    },
     comments: [{
         type: ObjectId,
         ref: 'Comments'

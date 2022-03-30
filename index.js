@@ -1,7 +1,9 @@
+require('dotenv').config();
 const express = require('express'),
     app = express(),
     mongoose = require('mongoose'),
-    { router } = require('./routes/routes');
+    { router } = require('./routes/routes'),
+    config = require('./config/config.json');
 
 app.use(express.json());
 
@@ -9,7 +11,7 @@ async function start () {
 
     try {
         
-        await mongoose.connect('mongodb://localhost:27017/custom_CMS');
+        await mongoose.connect("mongodb+srv://Align-center:"+encodeURIComponent(process.env.PASSWORD)+"@cluster0.zc0ii.mongodb.net/custom_CMS?retryWrites=true&w=majority");
 
         app.listen(3000, () => {
             console.log('Listening on port 3000');

@@ -13,10 +13,7 @@ const CommentSchema = new Schema({
     },
     user: {
         type: ObjectId,
-        required: true
-    },
-    post: {
-        type: ObjectId,
+        ref: 'User',
         required: true
     }
 });
