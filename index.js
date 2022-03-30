@@ -10,10 +10,10 @@ app.use(express.json());
 async function start () {
 
     try {
-        
+
         await mongoose.connect("mongodb+srv://Align-center:"+encodeURIComponent(process.env.PASSWORD)+"@cluster0.zc0ii.mongodb.net/custom_CMS?retryWrites=true&w=majority");
 
-        app.listen(3000, () => {
+        app.listen(process.env.PORT, () => {
             console.log('Listening on port 3000');
         });
 
