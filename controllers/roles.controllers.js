@@ -7,6 +7,13 @@ exports.getRoles = async function (req, res) {
     res.status(200).send(roles);
 }
 
+exports.getRoleByName = async function (req, res) {
+
+    let role = await Role.getRoleByName(req.params.name);
+
+    res.status(200).send(role);
+}
+
 exports.createRole = async function(req, res) {
 
     let role = await Role.createRole(req.body);

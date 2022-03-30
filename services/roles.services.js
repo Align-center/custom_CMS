@@ -5,6 +5,11 @@ exports.getRoles = async function () {
     return await Role.find();
 }
 
+exports.getRoleByName = async function (name) {
+
+    return await Role.findOne({name: name});
+}
+
 exports.createRole = async function (name) {
 
     return await Role.create(name)
