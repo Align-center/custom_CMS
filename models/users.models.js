@@ -33,7 +33,7 @@ const userSchema = new Schema({
         type: ObjectId,
         ref: 'Role',
         required: true,
-        default: '6241631f6ea4ff64034e9523'
+        default: '62445ad40762b5d26a96eb4a'
     },
     favoritePosts: [{
         type: ObjectId,
