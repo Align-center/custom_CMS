@@ -33,6 +33,13 @@ exports.updateUser = async function (req, res) {
     res.status(200).send(user);
 }
 
+exports.adminUpdateUser = async function (req, res) {
+
+    let user = await User.adminUpdateUser(res.params.id, req.body);
+
+    res.status(200).send(user);
+}
+
 exports.connectUser = async function (req, res) {
 
     let user = User.getUserByEmail(req.body.email).then(user => {
