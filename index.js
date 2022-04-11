@@ -3,10 +3,10 @@ const express = require('express'),
     app = express(),
     mongoose = require('mongoose'),
     { router } = require('./routes/routes'),
-    config = require('./config/config.json'),
     cors = require('cors');
 
 app.use(cors());
+
 app.use(express.json());
 
 async function start () {
