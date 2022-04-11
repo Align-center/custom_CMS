@@ -3,7 +3,7 @@ const express = require('express'),
     User = require('../controllers/users.controllers.js'),
     auth = require('../middlewares/auth');
 
-router.get('/login', User.connectUser);
+router.post('/login', User.connectUser);
 router.post('/register', User.createUser);
 
 router.get('/', auth,  User.getUsers);
