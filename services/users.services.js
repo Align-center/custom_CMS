@@ -43,7 +43,7 @@ exports.updateUser = async function (id, userObject) {
 
 exports.adminUpdateUser = async function (id, role) {
 
-    return await User.findOneAndUpdate({_id: id}, role, {new: true, runValidators: true});
+    return await User.findOneAndUpdate({_id: id}, role, {new: true, runValidators: true}).populate('role').exec();
 }
 
 exports.deleteUser = async function (id) {
