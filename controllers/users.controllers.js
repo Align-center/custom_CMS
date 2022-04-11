@@ -35,7 +35,7 @@ exports.updateUser = async function (req, res) {
 
 exports.adminUpdateUser = async function (req, res) {
 
-    let user = await User.adminUpdateUser(res.params.id, req.body);
+    let user = await User.adminUpdateUser(req.params.id, req.body);
 
     res.status(200).send(user);
 }
