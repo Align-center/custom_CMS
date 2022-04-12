@@ -13,7 +13,7 @@ module.exports = function (req, res, next) {
     jwt.verify(token, config.refreshSecret, (err, user) => {
 
         if (err)
-            throw res.status(401).send();
+            res.status(401).send();
 
         delete user.iat;
         delete user.exp;
