@@ -5,7 +5,10 @@ const User = require('../services/users.services.js'),
 
 exports.getUsers = async function (req, res) {
 
-    let users = await User.getUsers();
+    let limit = req.query.limit || 0,
+        page = req.query.page || 0;
+
+    let users = await User.getUsers(page, limit);
 
     res.status(200).send(users);
 }
