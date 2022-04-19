@@ -2,7 +2,7 @@ const User = require('../models/users.models.js');
 
 exports.getUsers = async function (page, limit) {
 
-    let users = await User.find().populate('role')
+    let users = await User.find().populate('role').skip((page - 1) * limit).limit(limit),
         count = await User.find().countDocuments();
     
     return {users, count};
